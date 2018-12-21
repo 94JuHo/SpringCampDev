@@ -289,9 +289,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				  var Location;
 				  function func_confirm(){
 					Location = prompt('장소를 입력하세요').toString();
-					// 지도를 생성합니다    
-					var map = new daum.maps.Map(mapContainer, mapOption);
-					var ps = new daum.maps.services.Places();
 					ps.keywordSearch(Location, placesSearchCB);
 				  }
 					// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
@@ -316,6 +313,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
 							// LatLngBounds 객체에 좌표를 추가합니다
 							var bounds = new daum.maps.LatLngBounds();
+							marker.setContent(null);
 							for (var i=0; i<data.length; i++) {
 								displayMarker(data[i]);
 								bounds.extend(new daum.maps.LatLng(data[i].y, data[i].x));
