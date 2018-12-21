@@ -289,12 +289,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				  var Location;
 				  function func_confirm(){
 					Location = prompt('장소를 입력하세요').toString();
-					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-						mapOption = {
-							center: new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-							level: 3 // 지도의 확대 레벨
-						};  
-					
 					// 지도를 생성합니다    
 					var map = new daum.maps.Map(mapContainer, mapOption);
 					var ps = new daum.maps.services.Places();
