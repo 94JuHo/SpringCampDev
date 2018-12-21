@@ -205,7 +205,7 @@
 							<div class="col-lg-7 contact-right">
 								<form class="form-area" id="myForm" action="index.html" method="post" class="contact-form text-right">
 									<textarea class="common-textarea mt-10" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-									<button class="primary-btn mt-20" onclick="initMap();">Find<span class="lnr lnr-arrow-right"></span></button>
+									<button class="primary-btn mt-20">Find<span class="lnr lnr-arrow-right"></span></button>
 									<div class="alert-msg">
 									</div>
 								</form>
@@ -275,15 +275,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeXFx9JBp-9XcyJax0fzbDavERkLCL4nA"></script>-->
 			  <script src="js/easing.min.js"></script>
 			  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a27411d7f467e9470b9d2986a60599b0"></script>
-	<script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new daum.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
+			<script>
+				var container = document.getElementById('map');
+				var options = {
+					center: new daum.maps.LatLng(33.450701, 126.570667),
+					level: 3
+				};
 
-		var map = new daum.maps.Map(container, options);
-	</script>		
+				var map = new daum.maps.Map(container, options);
+			</script>		
 			<script src="js/hoverIntent.js"></script>
 			<script src="js/superfish.min.js"></script>	
 			<script src="js/jquery.ajaxchimp.min.js"></script>
