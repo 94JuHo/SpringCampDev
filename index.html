@@ -287,10 +287,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			  <script src="js/easing.min.js"></script>
 			  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a27411d7f467e9470b9d2986a60599b0&libraries=services"></script>
 			  <script>
-				  function Search(){
+				  
 					// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 					var infowindow = new daum.maps.InfoWindow({zIndex:1});
-					var Location = document.getElementById('message').innerText;
+					
 					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 						mapOption = {
 							center: new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -303,9 +303,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					var ps = new daum.maps.services.Places(); 
 					
 					// 키워드로 장소를 검색합니다
-					ps.keywordSearch(Location, placesSearchCB);
-					docuemnt.wirte(Location); 
-				  }
+					ps.keywordSearch("한국교통대학교", placesSearchCB);
+					docuemnt.wirte("한국교통대학교"); 
+				  
 					
 					// 키워드 검색 완료 시 호출되는 콜백함수 입니다
 					function placesSearchCB (data, status, pagination) {
