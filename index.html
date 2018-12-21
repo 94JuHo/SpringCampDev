@@ -203,8 +203,8 @@
 								<div style=" width:100%;height: 545px;" id="map"></div>
 							</div>
 							<div class="col-lg-7 contact-right">
-								<form class="form-area" id="myForm" action="index.html" method="post" class="contact-form text-right">
-									<textarea class="common-textarea mt-10" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+								<form class="form-area" id="myForm" method="post" class="contact-form text-right">
+									<textarea class="common-textarea mt-10" id="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
 									<button class="primary-btn mt-20" onclick="Search(myForm)">Find<span class="lnr lnr-arrow-right"></span></button>
 									<div class="alert-msg">
 									</div>
@@ -297,11 +297,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					// 지도를 생성합니다    
 					var map = new daum.maps.Map(mapContainer, mapOption);
 
-					
-				  function Search(form){
+
+				  function Search(){
 					// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 					var infowindow = new daum.maps.InfoWindow({zIndex:1});
-					var Location = form.message.text;
+					var Location = document.getElementById('message').innerText;
 					 
 					// 장소 검색 객체를 생성합니다
 					var ps = new daum.maps.services.Places(); 
