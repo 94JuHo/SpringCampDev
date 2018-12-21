@@ -289,6 +289,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				  var Location;
 				  function func_confirm(){
 					Location = prompt('장소를 입력하세요');
+					// 지도를 생성합니다    
+					var map = new daum.maps.Map(mapContainer, mapOption);
+					// 장소 검색 객체를 생성합니다
+					var ps = new daum.maps.services.Places(); 
+					ps.keywordSearch(Location, placesSearchCB);
 				  }
 					// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 					var infowindow = new daum.maps.InfoWindow({zIndex:1});
@@ -304,14 +309,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					// 장소 검색 객체를 생성합니다
 					var ps = new daum.maps.services.Places(); 
 					
-					// 키워드로 장소를 검색합니다
-					if(Location == null){
-						ps.keywordSearch("한국교통대학교", placesSearchCB);
-					}else{
-						ps.keywordSearch(Location, placesSearchCB);
-					}
-					
-					
+					ps.keywordSearch("한국교통대학교", placesSearchCB);
 					
 					// 키워드 검색 완료 시 호출되는 콜백함수 입니다
 					function placesSearchCB (data, status, pagination) {
