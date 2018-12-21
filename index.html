@@ -205,7 +205,7 @@
 							<div class="col-lg-7 contact-right">
 								<form class="form-area" id="myForm" action="index.html" method="post" class="contact-form text-right">
 									<textarea class="common-textarea mt-10" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-									<button class="primary-btn mt-20">Find<span class="lnr lnr-arrow-right"></span></button>
+									<button class="primary-btn mt-20" onclick="Search(myForm)">Find<span class="lnr lnr-arrow-right"></span></button>
 									<div class="alert-msg">
 									</div>
 								</form>
@@ -287,9 +287,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			  <script src="js/easing.min.js"></script>
 			  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a27411d7f467e9470b9d2986a60599b0&libraries=services"></script>
 			  <script>
+
+				  function Search(form){
 					// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 					var infowindow = new daum.maps.InfoWindow({zIndex:1});
-					
+					var Location = form.message.text;
 					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 						mapOption = {
 							center: new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -303,7 +305,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					var ps = new daum.maps.services.Places(); 
 					
 					// 키워드로 장소를 검색합니다
-					ps.keywordSearch('한국교통대학교', placesSearchCB); 
+					ps.keywordSearch(Location, placesSearchCB); 
+				  }
 					
 					// 키워드 검색 완료 시 호출되는 콜백함수 입니다
 					function placesSearchCB (data, status, pagination) {
