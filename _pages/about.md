@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Mediumish Template for Jekyll
+title: Ryan Technical Blog
 permalink: /about
 comments: true
 ---
